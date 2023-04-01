@@ -11,9 +11,10 @@ jobs:
           command: npm run lint
       - run:
           name: Check code formatting
-          command: |
-            npm install -g prettier            
-            npm run prettier
+          command: npm install -g prettier
+      - run:
+          name: Check code formatting
+          command: npm run prettier
       - run:
           name: Test (Jest)
           command: npm run test -- --ci
