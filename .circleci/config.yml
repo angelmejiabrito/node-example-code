@@ -1,8 +1,10 @@
 version: 2.1
+orbs:
+  node: circleci/node@5.0.2
+
 jobs:
   build:
-    docker:
-      - image: circleci/node:14.17.0-browsers
+    executor: node/default
     steps:
       - checkout
       - run: npm install
