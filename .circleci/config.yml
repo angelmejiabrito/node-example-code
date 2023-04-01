@@ -12,6 +12,7 @@ jobs:
       - run:
           name: Check code formatting
           command: |
+            npm install -g prettier
             export PATH=$PATH:/home/circleci/.npm-global/bin
             npm run prettier
       - run:
