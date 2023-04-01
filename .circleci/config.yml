@@ -10,8 +10,10 @@ jobs:
           name: Linter (ESLint)
           command: npm run lint
       - run:
-          name: Formatter (Prettier)
-          command: npm run prettier
+          name: Check code formatting
+          command: |
+            export PATH=$PATH:/home/circleci/.npm-global/bin
+            npm run prettier
       - run:
           name: Test (Jest)
           command: npm run test -- --ci
