@@ -1,39 +1,22 @@
 version: 2.1
-
-orbs:
-  node: circleci/node@4.7
-
-
 jobs:
-  build_and_test: # this can be any name you choose
-    executor: node/default # use the default executor defined within the orb
+  build:
+    docker:
+      - image: circleci/node:14.17.0-browsers
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: npm
+      - run: npm install
       - run:
-          command: npm install
-          name: install    
-      - run:
+          name: Linter (ESLint)
           command: npm run lint
-          name: Run Linter (ESLint)
       - run:
-          command: npm run prettier
           name: Formatter (Prettier)
+          command: npm run prettier
       - run:
-          command: npm run test
-          name: Run Test (Jest) CI
-      - run:
-          command: npm run build
-          name: Build app
-      - persist_to_workspace:
-          root: ~/project
-          paths:
-            - .
-
-
+          name: Test (Jest)
+          command: npm run test -- --ci
+      - run: npm run build
 workflows:
-  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
-    # Inside the workflow, you define the jobs you want to run.
+  pull_request:
     jobs:
-      - build_and_test
+      - build
