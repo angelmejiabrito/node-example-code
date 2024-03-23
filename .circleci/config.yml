@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout
       - node/install
-       run:
+      - run:
           name: Install dependencies
           command: npm install -g
       - run:
