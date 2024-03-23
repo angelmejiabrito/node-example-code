@@ -8,9 +8,7 @@ jobs:
     steps:
       - checkout
       - node/install
-      - run:
-          name: Install dependencies
-          command: npm install
+      - node/install-packages
       - run:
           name: Linter (ESLint)
           command: npm run lint
@@ -18,7 +16,7 @@ jobs:
           name: Install prettier
           command: npm install prettier
       - run:
-          name: Check code formatting
+          name: Formatter
           command:  npx prettier . -w
       - run:
           name: Check code formatting
