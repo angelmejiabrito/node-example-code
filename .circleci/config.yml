@@ -16,7 +16,7 @@ jobs:
           command: npm run lint
       - run:
           name: Check code formatting
-          command:  npx prettier
+          command:  npx prettier . -w
       - run:
           name: Test (Jest)
           command: npm run test
