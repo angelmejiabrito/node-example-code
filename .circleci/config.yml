@@ -19,7 +19,7 @@ jobs:
           command: npm install prettier
       - run:
           name: Check code formatting
-          command:  npx prettier
+          command:  npm run prettier
       - run:
           name: Test (Jest)
           command: npm run test
