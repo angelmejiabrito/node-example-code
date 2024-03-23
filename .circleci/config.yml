@@ -9,8 +9,8 @@ jobs:
       - checkout
       - node/install
       - run:
-        name: Install dependencies
-        command: npm install
+          name: Install dependencies
+          command: npm install
       - run:
           name: Linter (ESLint)
           command: npm run lint
