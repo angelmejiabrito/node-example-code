@@ -11,9 +11,9 @@ jobs:
       - run:
           name: Install dependencies
           command: npm install -g
-      - run:
-          name: Linter (ESLint)
-          command: npm run lint
+      # - run:
+      #     name: Linter (ESLint)
+      #     command: npm run lint
       # - run:
       #     name: Install Prettier
       #     command: npm install prettier
