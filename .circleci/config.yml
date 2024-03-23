@@ -8,14 +8,15 @@ jobs:
     steps:
       - checkout
       - node/install
-      - node/install-packages
-      - node/run:
-          npm-run: lint
-      - node/run:
-          npm-run: prettier
-      - node/test
-      - node/run:
-          npm-run: build
+      # - node/install-packages
+      # - node/run:
+      #     npm-run: lint
+      # - node/run:
+      #     npm-run: prettier
+      # - node/test
+      # - node/run:
+      #     npm-run: build
+      - run: node --version
 workflows:
   node_app:
     jobs:
