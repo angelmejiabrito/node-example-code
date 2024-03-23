@@ -19,7 +19,7 @@ jobs:
           command: npm install prettier
       - run:
           name: Check code formatting
-          command:  npm run prettier -w
+          command:  npx prettier . -w
       - run:
           name: Check code formatting
           command:  npm run prettier
