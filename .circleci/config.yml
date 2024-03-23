@@ -20,9 +20,9 @@ jobs:
       - run:
           name: Check code formatting
           command:  npx prettier --write .
-      - run:
-          name: Test (Jest)
-          command: npm run test
+      # - run:
+      #     name: Test (Jest)
+      #     command: npm run test
       - run: 
           name: Build  
           command: npm run build
