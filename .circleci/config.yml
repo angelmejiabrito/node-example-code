@@ -7,10 +7,10 @@ jobs:
       - image: cimg/base:current
     steps:
       - checkout
-      # - node/install
+      - node/install
       - node/install-packages
-      # - node/run:
-      #     npm-run: lint
+      - node/run:
+          npm-run: lint
       # - node/run:
       #     npm-run: prettier
       # - node/test
