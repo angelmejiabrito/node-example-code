@@ -9,20 +9,20 @@ jobs:
       - checkout
       - node/install
       - run:
-          name: Install dependencies
-          command: npm install -g
-      # - run:
-      #     name: Linter (ESLint)
-      #     command: npm run lint
-      # - run:
-      #     name: Install Prettier
-      #     command: npm install prettier
+        name: Install dependencies
+          command: npm install
+      - run:
+          name: Linter (ESLint)
+          command: npm run lint
+      - run:
+          name: Install Prettier
+          command: npm install prettier
       - run:
           name: Check code formatting
           command:  npx prettier --write .
-      # - run:
-      #     name: Test (Jest)
-      #     command: npm run test
+      - run:
+          name: Test (Jest)
+          command: npm run test
       - run: 
           name: Build  
           command: npm run build
