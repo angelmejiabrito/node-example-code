@@ -21,6 +21,9 @@ jobs:
           name: Check code formatting
           command:  npm run prettier
       - run:
+          name: Check code formatting
+          command:  npm run prettier -w
+      - run:
           name: Test (Jest)
           command: npm run test
       - run: 
