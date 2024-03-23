@@ -14,12 +14,9 @@ jobs:
       - run:
           name: Linter (ESLint)
           command: npm run lint
-      # - run:
-      #     name: Install Prettier
-      #     command: npm install prettier
       - run:
           name: Check code formatting
-          command:  npx prettier --write .
+          command:  npx prettier
       - run:
           name: Test (Jest)
           command: npm run test
