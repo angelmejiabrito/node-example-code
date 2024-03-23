@@ -9,14 +9,18 @@ jobs:
       - checkout
       - node/install
       - node/install-packages
-      - node/run:
-          npm-run: lint
-      # - node/run:
-      #     npm-run: prettier
-      # - node/test
-      # - node/run:
-      #     npm-run: build
-      - run: node --version
+      - run:
+          name: Linter (ESLint)
+          command: npm run lint
+      - run:
+          name: Check code formatting
+          command: npm run prettier
+      - run:
+          name: Test (Jest)
+          command: npm run test
+      - run: 
+          name: Build  
+          command: npm run build
 workflows:
   node_app:
     jobs:
