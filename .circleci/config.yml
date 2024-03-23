@@ -11,7 +11,7 @@ jobs:
       - node/install-packages
       - run:
           name: Linter (ESLint)
-          command: npx lint
+          command: npm run lint
       - run:
           name: Check code formatting
           command: npx prettier
