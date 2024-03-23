@@ -2,14 +2,20 @@ version: '2.1'
 orbs:
   node: circleci/node@5.2.0
 jobs:
-  install-node-example:
+  node-steps:
     docker:
       - image: cimg/base:current
     steps:
       - checkout
-      - node/install
-      - run: node --version
+      - node/install-packages
+      - node/run:
+          npm-run: lint
+      - node/run:
+          npm-run: prettier
+      - node/test
+      - node/run:
+          npm-run: build
 workflows:
-  test_my_app:
+  node_app:
     jobs:
-      - install-node-example
+      - node-steps
