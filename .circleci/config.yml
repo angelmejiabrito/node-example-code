@@ -15,6 +15,9 @@ jobs:
           name: Linter (ESLint)
           command: npm run lint
       - run:
+          name: Install prettier
+          command: npm install prettier
+      - run:
           name: Check code formatting
           command:  npx prettier . -w
       - run:
